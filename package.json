@@ -1,5 +1,6 @@
 {
   "name": "@mja-org/root-config",
+  "homepage": "https://mjmaix.github.io/single-spa-root-config",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js",
@@ -8,7 +9,8 @@
     "check-format": "prettier --check .",
     "prepare": "husky install",
     "build": "concurrently npm:build:*",
-    "build:webpack": "webpack --mode=production"
+    "build:webpack": "webpack --mode=production",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -38,6 +40,7 @@
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "gh-pages": "^4.0.0",
     "single-spa": "^5.9.3"
   }
 }
