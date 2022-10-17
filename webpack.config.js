@@ -2,8 +2,6 @@ const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const CnameWebpackPlugin = require("cname-webpack-plugin");
-
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "mja-org";
   const defaultConfig = singleSpaDefaults({
@@ -24,9 +22,6 @@ module.exports = (webpackConfigEnv, argv) => {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName,
         },
-      }),
-      new CnameWebpackPlugin({
-        domain: process.env.CNAME_VALUE || "example.com",
       }),
     ],
   });
